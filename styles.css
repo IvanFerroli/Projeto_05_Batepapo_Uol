@@ -1,6 +1,9 @@
 * {
   box-sizing: border-box;
 }
+.hidden {
+  display: none;
+}
 body {
   overflow-y: hidden;
   overflow-y: scroll;
@@ -42,21 +45,21 @@ main {
   background-color: #e5e5e5;
 }
 main .message {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    min-height: 40px;
-    width: 100%;
-    height: auto;
-    margin-top: 4px;
-    font-size: 14px;
-    font-family: roboto;
-    font-weight: 400;
-    font-style: normal;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 40px;
+  width: 100%;
+  height: auto;
+  margin-top: 4px;
+  font-size: 14px;
+  font-family: roboto;
+  font-weight: 400;
+  font-style: normal;
 }
 main .message .message-inner-container {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
   position: absolute;
   left: 9px;
   right: 9px;
@@ -75,18 +78,18 @@ main .message .message-inner-container {
   background: #ffdede;
   border-radius: 2px;
 }
-.time{
-    max-width: 10%;
-    color: #aaaa;
+.time {
+  max-width: 10%;
+  color: #aaaa;
 }
-.message-span{
-    position: absolute;
-    max-width: 78%;
-    height: auto;
-    left: 75px;
+.message-span {
+  position: absolute;
+  max-width: 78%;
+  height: auto;
+  left: 75px;
 }
-span .user-span{
-    font-weight: 700;
+span .user-span {
+  font-weight: 700;
 }
 footer {
   position: fixed;
@@ -122,11 +125,65 @@ input {
   outline: none;
   border: none;
 }
-input::placeholder{
-    font-family: Roboto;
-    font-style: italic;
-    font-weight: 400;
-    font-size: 18px;
-    color: #000000;
+input::placeholder {
+  font-family: Roboto;
+  font-style: italic;
+  font-weight: 400;
+  font-size: 18px;
+  color: #000000;
 }
+.entry-screen {
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+  width: 100vw;
+  background-color: #ffffff;
+}
+.entry-screen img {
+  position: absolute;
+  top: 72px;
+  height: 92px;
+}
+.entry-screen input {
+  position: absolute;
+  top: 258px;
+  height: 54px;
+  background-color: red;
+  background: #ffffff;
+  border: 1px solid #d7d7d7;
+  box-sizing: border-box;
+  border-radius: 4px;
+  text-align: center;
+}
+.entry-screen input::placeholder {
+  display: flex;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 139%;
 
+  display: flex;
+  align-items: center;
+  text-align: center;
+
+  color: #aeaeae;
+}
+.entry-screen button {
+  position: absolute;
+  top: 327px;
+  height: 45px;
+  background: #e7e7e7;
+  border-radius: 9px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 139%;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: #696969;
+  outline: none;
+  border: none;
+}
