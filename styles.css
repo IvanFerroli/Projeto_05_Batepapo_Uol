@@ -44,7 +44,7 @@ main {
   width: 100%;
   background-color: #e5e5e5;
 }
-main .message {
+main .msg {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -66,15 +66,15 @@ main .message .message-inner-container {
   height: auto;
   max-width: calc(100% - 18px);
 }
-.entering-message {
+.status {
   background-color: #dcdcdc;
   border-radius: 2px;
 }
-.public-message {
+.message {
   background: #ffffff;
   border-radius: 2px;
 }
-.private-message {
+.private_message {
   background: #ffdede;
   border-radius: 2px;
 }
@@ -88,7 +88,10 @@ main .message .message-inner-container {
   height: auto;
   left: 75px;
 }
-span .user-span {
+span .from {
+  font-weight: 700;
+}
+span .to {
   font-weight: 700;
 }
 footer {
