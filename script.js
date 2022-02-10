@@ -1,29 +1,32 @@
-// const messages = axios.get('http://meuservidor.com/lalala');
-// promessa.then(processarResposta);
+const entryInput = document.querySelector(".entry").value;
+const messagesContainer = document.querySelector("main");
 
-// function processarResposta(resposta) {
-// 	console.log(resposta.data);
-// }
 function startApp() {
-    getMessages();
+  setInterval(getMessages, 3000);
 }
 startApp();
-function getMessages(){
-    const promise = axios.get("https://mock-api.driven.com.br/api/v4/uol/messages");
-    promise.then(loadMessages);
-    console.log("Aqui eu faço o get")
-    // promise.then(console.log(resposta));
+
+function getMessages() {
+  const promise = axios.get(
+    "https://mock-api.driven.com.br/api/v4/uol/messages"
+  );
+
+  promise.then(loadMessages);
 }
-function loadMessages(answer){
-    console.log(answer.data[3])
-    for(i = 0; i <= answer.data.length; i++){
-        var messagesContainer = document.querySelector("main")
+
+function scrollIntoView() {
+    const toView = document.querySelector('main').lastElementChild;
+    toView.scrollIntoView();
+}
+
+function loadMessages(answer) {
+    for (i = 0; i <= answer.data.length; i++) {
         let type = answer.data[i].type;
         let time = answer.data[i].time;
         let from = answer.data[i].from;
         let to = answer.data[i].to;
         let text = answer.data[i].text;
-        console.log(type, time, from, to, text)
+
         var message = `
             <div class="msg ${type}">
                 <div class="message-inner-container">
@@ -33,56 +36,32 @@ function loadMessages(answer){
                     </span>
                 </div>
             </div>
-        `
-        messagesContainer.innerHTML += message;
-
+                    `;
+            messagesContainer.innerHTML += message;
+            scrollIntoView();
     }
-
-        // from: "João",
-		// to: "Todos",
-		// text: "entra na sala...",
-		// type: "status",
-		// time: "08:01:17"
-
-        // from: "João",
-		// to: "Todos",
-		// text: "Bom dia",
-		// type: "message",
-		// time: "08:02:50"
-    
-    //         <div class="message public-message">
-    //             <div class="message-inner-container">
-    //                 <span class="time">(23:22:00)</span><span class="message-span"><span class="user-span">Rubicão</span> para <span class="user-span">Todos:</span> Bom dia arrombados! </span>
-    //             </div>
-    //        </div>
-    //        <div class="message private-message">
-    //             <div class="message-inner-container">
-    //                 <span class="time">(23:22:00)</span><span class="message-span"><span class="user-span">Rubicão</span> para <span class="user-span">Mariazinha:</span> Vai tomar no cu também. Seu pai chora no banho</span>
-    //             </div>
-    //         </div>
-    //         <div class="message entering-message">
-    //             <div class="message-inner-container">
-    //                 <span class="time">(23:22:00)</span><span class="message-span"><span class="user-span">Mariazinha</span> sai na sala...</span>
-    //             </div>
-    //        </div>
-
-    // function buscarDados() {
-    //     const resposta = axios.get("https://rickandmortyapi.com/api/character/118");
-    //     resposta.then(renderizarPersonagem);
-    //   }
-    // function renderizarPersonagem(personagem) {
-    //     var elementoImagem = document.querySelector(".imagem-do-personagem");
-    //     var elementoNome = document.querySelector(".nome");
-    //     var elementoEspecie = document.querySelector(".especie");
-      
-    //     elementoImagem.src = personagem.data.image;
-    //     elementoNome.innerHTML = personagem.data.name;
-    //     elementoEspecie.innerHTML = personagem.data.species;
-    //   }
 }
+        
+function enterParticipantName() {
+    const entryInput = document.querySelector(".entry input")
+    // if (entryInput != "") {
+    //     enterParticipants();
+    // }else {
+    //     alert("Por favor, digite um nome válido");
+    // }
+    toggle();
+}
+
+// function enterParticipants() {
+//     const participantNamePost = axios.post("https://mock-api.driven.com.br/api/v4/uol/participants", {nome: entryInput});
+  
+//     participantNamePost.then(toggle);
+//     participantNamePost.catch(alert("Já existe um usuário com este nome. Por favor, informe outro."));
+// }
+
 function toggle() {
-    mainToggle = document.querySelector(".main-page")
-    entryToggle = document.querySelector(".entry-screen")
-    mainToggle.classList.toggle("hidden")
-    entryToggle.classList.toggle("hidden")
+    mainToggle = document.querySelector(".main-page");
+    entryToggle = document.querySelector(".entry-screen");
+    mainToggle.classList.toggle("hidden");
+    entryToggle.classList.toggle("hidden");
 }

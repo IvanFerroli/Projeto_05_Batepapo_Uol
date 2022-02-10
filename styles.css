@@ -5,8 +5,6 @@
   display: none;
 }
 body {
-  overflow-y: hidden;
-  overflow-y: scroll;
   background-color: #e5e5e5;
 }
 header {
@@ -43,6 +41,8 @@ main {
   height: 100%;
   width: 100%;
   background-color: #e5e5e5;
+  overflow-y: hidden;
+  overflow-y: scroll;
 }
 main .msg {
   display: flex;
