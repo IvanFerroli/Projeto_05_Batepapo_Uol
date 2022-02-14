@@ -32,8 +32,8 @@
 <body>
     <section class="entry-screen">
         <img src="assets/logo 1.png" alt="logo" class="logo-entry-screen">
-        <input type="text" class="entry" placeholder="Digite seu nome">
-        <button class="entry-button" onclick="enterParticipantName()">Entrar</button>
+        <input type="text" id="entry-input" placeholder="Digite seu nome">
+        <button id="entry-button" onclick="startApp()">Entrar</button>
     </section>
     <section class="main-page hidden">
         <header>
@@ -46,8 +46,8 @@
         <aside></aside>
         <footer>
             <div class="footer-container">
-                <input type="text" placeholder="Escreva aqui...">
-                <ion-icon name="paper-plane-outline" class="paper-plane"></ion-icon>
+                <input id="message-input" type="text" placeholder="Escreva aqui...">
+                <ion-icon id="send-button" onclick="sendMessage()" name="paper-plane-outline" class="paper-plane"></ion-icon>
             </div>
         </footer>
     </section>
