@@ -32,8 +32,8 @@
 <body>
     <section class="entry-screen">
         <img src="assets/logo 1.png" alt="logo" class="logo-entry-screen">
-        <input type="text" id="entry-input" placeholder="Digite seu nome">
-        <button id="entry-button" onclick="startApp()">Entrar</button>
+        <input data-identifier="enter-name" type="text" id="entry-input" placeholder="Digite seu nome">
+        <button data-identifier="start" id="entry-button" onclick="startApp()">Entrar</button>
     </section>
     <section class="overlay hidden" onclick="asideMenuToggle()"></section>
     <section class="main-page hidden">
@@ -44,7 +44,9 @@
             </div>
         </header>
         <main></main>
-        <aside class="hidden"></aside>
+        <aside class="hidden">
+            <li></li>
+        </aside>
         <footer>
             <div class="footer-container">
                 <input id="message-input" type="text" placeholder="Escreva aqui...">
