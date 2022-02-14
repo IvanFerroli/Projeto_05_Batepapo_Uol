@@ -35,15 +35,16 @@
         <input type="text" id="entry-input" placeholder="Digite seu nome">
         <button id="entry-button" onclick="startApp()">Entrar</button>
     </section>
+    <section class="overlay hidden" onclick="asideMenuToggle()"></section>
     <section class="main-page hidden">
         <header>
             <div class="header-container">
                 <img src="assets/logo 1.png" alt="logo" class="logo">
-                <ion-icon name="people" classe="people"></ion-icon>
+                <ion-icon onclick="asideMenuToggle()" name="people" classe="people"></ion-icon>
             </div>
         </header>
         <main></main>
-        <aside></aside>
+        <aside class="hidden"></aside>
         <footer>
             <div class="footer-container">
                 <input id="message-input" type="text" placeholder="Escreva aqui...">

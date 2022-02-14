@@ -190,3 +190,34 @@ input::placeholder {
   outline: none;
   border: none;
 }
+
+aside {
+  position: fixed;
+  z-index: 3;
+  top: 0;
+  right: 0;
+  background: #fff;
+  width: 210px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 0 20px;
+  transition: all 150ms linear;
+  overflow-y: scroll;
+}
+
+aside.hidden {
+  right: -300px;
+}
+
+.overlay {
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  z-index: 2;
+  opacity: 0.5;
+  top: 80px;
+  right: 0;
+  background: #000;
+  transition: all 150ms linear;
+}
