@@ -56,6 +56,31 @@ function participantStatus() {
   });
 }
 
+function getParticipants() {
+    const promise = axios.get(
+      "https://mock-api.driven.com.br/api/v4/uol/participants"
+    );
+  
+    promise.then(listParticipants);
+  }
+
+  function listParticipants(participants) {
+    var asideMenu = document.querySelector(".aside-list");
+    asideMenu.innerHTML = "";
+    for (i = 0; i < participants.data.length; i++) {
+      let list = participants.data[i].name;
+
+        var user = `
+                <li>
+                ${list}
+                </li>
+              `;
+              
+        asideMenu.innerHTML += user;
+      
+    }
+  }
+
 function getMessages() {
   const promise = axios.get(
     "https://mock-api.driven.com.br/api/v4/uol/messages"
